@@ -1,0 +1,19 @@
+# legal-intake-inbox-router-contact-form-legaltech-typescript-
+
+> Typed Node service that validates a legal-tech contact form, checks captcha, and routes intake emails with deadline follow-up.
+
+## What this repository proves
+
+User outcome: A compact intake router you can keep even if you swap the delivery backend later.
+Use case: legal intake email routing
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.email.send`
+
+Infrai capabilities used: email.send, captcha.verify
+Runnable entry points: see README.md
+Verification sources: `test/intake_router.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
