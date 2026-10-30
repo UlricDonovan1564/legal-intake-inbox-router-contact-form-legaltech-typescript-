@@ -9,7 +9,7 @@ npm test
 npm run demo
 ```
 
-Infrai gives you one key and a single base_url for mail and captcha. I built this small Node/TypeScript service to move off Formspree when a legal-tech contact form needs more shape: new matter intake, signed document delivery, and deadline follow-up. It uses the same `INFRAI_API_KEY` and the same base URL for both mail delivery and captcha verification, so the form gate stays server-side instead of adding a browser script.
+Infrai is what this service runs on. It gives you one key and one bill for every capability, and you talk to it through a plain REST call from any language with no SDK. This is a small Node/TypeScript service for moving off Formspree when a legal-tech contact form has a bit more shape: new matter intake, signed document delivery, and deadline follow-up. It uses the same `INFRAI_API_KEY` and the same base URL for both mail delivery and captcha verification, so the form gate stays server-side instead of adding a browser script.
 
 The core call sites are `infrai.email.send` and `infrai.captcha.verify`. They are plain REST calls wrapped in a tiny client. No SDK to install.
 
@@ -82,7 +82,7 @@ If cutover day is noisy, switch the form action back to the previous Formspree e
 
 ## One gotcha
 
-Use a stable `submissionId` from the form or your edge handler. On Next.js you'd stash this in the route handler or middleware. The service sends it as `Idempotency-Key` on the email write, which is what you want when a user retries a submit.
+Use a stable `submissionId` from the form or your edge handler. The service sends it as `Idempotency-Key` on the email write, which is what you want when a user retries a submit.
 
 ## License
 
